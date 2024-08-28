@@ -1,20 +1,27 @@
 <?php
-include 'db_connection.php';
 
-if (isset($_POST['id']) && isset($_POST['name']) && isset($_POST['mobile']) && isset($_POST['city'])) {
+include 'db_connection.php'; 
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
     $name = $_POST['name'];
-    $mobile = $_POST['mobile'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
     $city = $_POST['city'];
 
-    $sql = "UPDATE users SET username='$name', mobile='$mobile', city='$city' WHERE id=$id";
     
-    if ($conn->query($sql) === TRUE) {
-        echo "User updated successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    if (!$id || !$name || !$email || !$phone || !$city) {
+        echo 'All fields are required';
+        exit();
     }
 
-    $conn->close();
+    $sql = "UPDATE users SET username = '$name', email = '$email', mobile = '$phone', city = '$city' WHERE id = $id";
+
+    if (mysqli_query($conn, $sql)) {
+        echo 'User updated successfully';
+    } else {
+        echo 'Error: ' . mysqli_error($conn);
+    }
+
+    mysqli_close($conn); 
 }
-?>

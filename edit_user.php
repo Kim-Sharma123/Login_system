@@ -197,7 +197,7 @@
                 dataType: 'json', // Expect a JSON response
                 success: function(response) {
                     if (response.error) {
-                        alert(response.error); // Handle any errors from the server
+                        alert(response.error); 
                     } else {
                         // Populate the modal with the data from the server
                         $('#editUserId').val(response.id);
@@ -247,7 +247,7 @@
     </script>
 
     <script>
-        $(document).ready(function() {
+       $(document).ready(function() {
     // Update button click event
     $('#updateUserBtn').on('click', function() {
         // Get values from the modal input fields
@@ -255,17 +255,17 @@
         var name = $('#editName').val();
         var email = $('#editEmail').val();
         var phone = $('#editPhone').val();
-        var city =$('#editCity').val();
+        var city = $('#editCity').val();
 
         // Debug: Log the values being sent to the server
         console.log('ID: ' + id);
         console.log('Name: ' + name);
         console.log('Email: ' + email);
         console.log('Phone: ' + phone);
+        console.log('City: ' + city);
 
-        // Send an AJAX request to update the user in the database
         $.ajax({
-            url: 'update_user.php', // The PHP file to handle the update
+            url: 'update_user.php', 
             type: 'POST',
             data: {
                 id: id,
@@ -275,12 +275,11 @@
                 city: city
             },
             success: function(response) {
-                console.log('Server Response: ' + response); // Debug: Log the server's response
+                console.log('Server Response: ' + response); 
 
-                if (response.trim() === 'success') {
-                    // If the update was successful, close the modal and reload the user table
+                if (response.trim() === 'User updated successfully') {
                     $('#editUserModal').modal('hide');
-                    loadUsers(); // Refresh the user list
+                    loadUsers(); 
                 } else {
                     // Handle any errors
                     alert('Failed to update user: ' + response);
