@@ -90,39 +90,39 @@
     </style>
 </head>
 <body>
-<div class="container-fluid sb2">
-    <div class="row">
-    <div class="col-md-3 sidebar">
-            <div class="profile">
-                <img src="images/placeholder.jpg" alt="Profile Picture">
-                <h6>Victoria Baker</h6>
-                <p>Santa Ana, CA</p>
+    <div class="container-fluid sb2">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <div class="profile">
+                    <img src="images/placeholder.jpg" alt="Profile Picture">
+                    <h6>Victoria Baker</h6>
+                    <p>Santa Ana, CA</p>
+                </div>
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="index.php">Dashboard</a>
+                    <a class="nav-link" href="add_user.php">Add User</a>
+                    <a class="nav-link active" href="edit_user.php">Edit User</a>
+                </nav>
             </div>
-            <nav class="nav flex-column">
-                <a class="nav-link" href="index.php">Dashboard</a>
-                <a class="nav-link" href="add_user.php">Add User</a>
-                <a class="nav-link active" href="edit_user.php">Edit User</a>
-            </nav>
-        </div>
             <main role="main" class="col-md-9 main">
-            <h2>User Management</h2>
-            <table class="table" id="userTable">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                
-                </tbody>
-            </table>
-            </div>
+                <h2>User Management</h2>
+                <table class="table" id="userTable">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    </tbody>
+                </table>
+            </main>
+        </div>
     </div>
-</div>
 
 <!-- Modal for Editing User -->
 <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
